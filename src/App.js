@@ -16,7 +16,7 @@ function App() {
 
         {/* Cách render cho object và chuỗi bình thường  */}
         <p>
-          Tôi là {student.name} và tôi {age} tuổi
+          Tôi là {student.name} và tôi {age} tuổi và tôi yêu bà bé THÚI
         </p>
         
         {/* Cách render cho loại true / false */}

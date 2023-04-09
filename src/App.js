@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Index from "./features/Ablum/components/index.jsx"
 
 function App() {
   const student = {
@@ -18,7 +19,7 @@ function App() {
         <p>
           Tôi là {student.name} và tôi {age} tuổi và tôi yêu bà bé THÚI
         </p>
-        
+
         {/* Cách render cho loại true / false */}
         <p>Cách 1 (dùng trong trường hợp ngắn): {isMale ? "Nam" : "Nữ"}</p>
 
@@ -26,14 +27,14 @@ function App() {
           Cách 2 (dùng trong trường hợp ngắn): {isMale ? <p>Nam</p> : <p>Nữ</p>}
         </p>
 
-        <p> 
+        <p>
           Dùng trong trường hợp dài và phức tạp
           {isMale && <p>... </p>}
           {!isMale && <p>... </p>}
         </p>
 
         <p>
-        Dùng trong trường hợp dài và phức tạp nhưng ngon hơn
+          Dùng trong trường hợp dài và phức tạp nhưng ngon hơn
           {isMale && (
             // dùng <div> <> <React.Gragment> cái nào cũng được
             <div>
@@ -44,14 +45,17 @@ function App() {
           )}
         </p>
 
-            {/* Cách render cho array dùng map */}
+        {/* Cách render cho array dùng map */}
         <ul>
-          {colorList.map(color => (
-            <li key={color} style={{color}}>{color}</li>
+          {colorList.map((color) => (
+            <li key={color} style={{ color }}>
+              {color}
+            </li>
           ))}
         </ul>
 
       </header>
+        <Index />
     </div>
   );
 }

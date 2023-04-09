@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Index from "./features/Ablum/components/index.jsx"
+import TodoFeature from "./features/Todo/index.jsx"
 
 function App() {
   const student = {
@@ -56,6 +57,8 @@ function App() {
 
       </header>
         <Index />
+        <br/>
+        <TodoFeature />
     </div>
   );
 }

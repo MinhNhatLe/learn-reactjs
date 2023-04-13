@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import TodoList from './components/TodoList/index'
+import TodoList from './components/TodoList/index';
 TodoFeature.propTypes = {
 
 };

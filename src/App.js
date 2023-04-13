@@ -1,7 +1,9 @@
-import logo from "./logo.svg";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Index from "./features/Ablum/components/index.jsx"
-import TodoFeature from "./features/Todo/index.jsx"
+import AlbumFeature from "./features/Ablum/components";
+import TodoFeature from "./features/Todo";
+import logo from "./logo.svg";
+
 
 function App() {
   const student = {
@@ -56,9 +58,11 @@ function App() {
         </ul>
 
       </header>
-        <Index />
-        <br/>
-        <TodoFeature />
+      <Routes>
+        <Route path="/todos" element={<TodoFeature />} />
+        <Route path="/albums" element={<AlbumFeature />} />
+      </Routes>
+
     </div>
   );
 }

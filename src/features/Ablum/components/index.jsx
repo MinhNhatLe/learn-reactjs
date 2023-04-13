@@ -1,7 +1,7 @@
 import React from 'react'
 import AlbumList from './AlbumList/albumList'
 
-function index(props) {
+function AlbumFeature(props) {
     const albumList = [
         {
             id: 1,
@@ -48,4 +48,4 @@ function index(props) {
     )
 }
 
-export default index
+export default AlbumFeature;

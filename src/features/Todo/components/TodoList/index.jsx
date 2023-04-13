@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
-import "./styles.scss"
+import PropTypes from "prop-types";
+import React from "react";
+import "./styles.scss";
 
 TodoList.propTypes = {
     todoList: PropTypes.array,

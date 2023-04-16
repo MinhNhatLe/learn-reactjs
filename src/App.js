@@ -1,11 +1,29 @@
-import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, NavLink, Route, Routes } from "react-router-dom";
 import "./App.css";
+import productApi from "./api/productApi";
 import AlbumFeature from "./features/Ablum/components";
 import TodoFeature from "./features/Todo";
+import Demo from "./features/demo";
 import logo from "./logo.svg";
+import CounterFeature from "./features/Counter";
 
 
 function App() {
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+
+      // này muốn lấy 10 thằng thì truyền params tham số vào getAll còn không thì thôi
+      const params = {
+        _limit: 10,
+      };
+      const productList = await productApi.getAll(params);
+      console.log(productList);
+    };
+    fetchProducts();
+  }, []);
+
   const student = {
     name: "Nhật",
   };
@@ -58,12 +76,30 @@ function App() {
         </ul>
 
       </header>
+
+      <p>
+        <Link to="/todos">Todo1</Link>
+      </p>
+      <p>
+        <Link to="/albums">Albums1</Link>
+      </p>
+      <p>
+        <NavLink to="/todos">Todo2</NavLink>
+      </p>
+      <p>
+        <NavLink to="/albums">Albums2</NavLink>
+      </p>
       <Routes>
         <Route path="/todos" element={<TodoFeature />} />
         <Route path="/albums" element={<AlbumFeature />} />
       </Routes>
 
-    </div>
+      <hr />
+      <CounterFeature />
+      <hr />
+      hello bà gia
+      <Demo />
+    </div >
   );
 }
 

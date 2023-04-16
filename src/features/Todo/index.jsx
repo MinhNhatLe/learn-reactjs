@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TodoList from './components/TodoList/index';
+import TodoForm from './components/TodoForm';
 TodoFeature.propTypes = {
 
 };
@@ -58,8 +59,26 @@ function TodoFeature(props) {
 
     const renderTodoList = todoList.filter(todo => filteredStatus === 'all' || filteredStatus === todo.status);
 
+
+    const handleTodoFormSubmit = (values) => {
+        console.log('Form submit:', values);
+        const newTodo = {
+            id: todoList.length + 1,
+            title: values.title,
+            status: 'new',
+        };
+
+        // lấy giá trị todoList hiện tại + newTodo mới khai báo
+        const newTodoList = [...todoList, newTodo];
+        setTodoList(newTodoList);
+    };
     return (
         <div>
+            {/* Này là page/container */}
+            <h3>What to do</h3>
+            <TodoForm onSubmit={handleTodoFormSubmit} />
+
+            <h3>Todo List</h3>
             <TodoList todoList={renderTodoList} onTodoClick={handleTodoClick} />
             <div>
                 <button onClick={handleShowAllClick}>Show all</button>
